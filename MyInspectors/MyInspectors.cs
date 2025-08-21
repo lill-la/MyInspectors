@@ -140,7 +140,7 @@ namespace MyInspectors
                             yield return new CodeInstruction(OpCodes.Call, typeof(SceneInspector_Patch).GetMethod(nameof(IsHost)));
                             yield return new CodeInstruction(OpCodes.Ldarg_0);
                             yield return new CodeInstruction(OpCodes.Ldfld, code2.operand);
-                            yield return new CodeInstruction(OpCodes.Callvirt, typeof(SceneInspector_Patch).GetMethod(nameof(IsChangedLocally)));
+                            yield return new CodeInstruction(OpCodes.Call, typeof(SceneInspector_Patch).GetMethod(nameof(IsChangedLocally)));
                             yield return new CodeInstruction(OpCodes.Or);
                             yield return new CodeInstruction(OpCodes.And);
                             code.opcode = OpCodes.Brfalse;
@@ -151,7 +151,7 @@ namespace MyInspectors
                     {
                         // is host OR the value has been changed by local user
                         yield return new CodeInstruction(OpCodes.Ldarg_0);
-                        yield return new CodeInstruction(OpCodes.Callvirt, typeof(SceneInspector_Patch).GetMethod(nameof(ShouldContinue)));
+                        yield return new CodeInstruction(OpCodes.Call, typeof(SceneInspector_Patch).GetMethod(nameof(ShouldContinue)));
                         yield return new CodeInstruction(OpCodes.Or);
                     }
                     if (code.StoresField(_currentContainer))
