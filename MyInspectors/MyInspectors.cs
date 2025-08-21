@@ -22,7 +22,7 @@ namespace MyInspectors
     {
         public override string Name => "MyInspectors";
         public override string Author => "art0007i"; // with massive help from https://github.com/EIA485
-        public override string Version => "2.0.2";
+        public override string Version => "2.0.3";
         public override string Link => "https://github.com/lill-la/MyInspectors";
 
         [AutoRegisterConfigKey]
