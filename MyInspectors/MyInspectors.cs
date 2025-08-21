@@ -23,14 +23,14 @@ namespace MyInspectors
         public override string Name => "MyInspectors";
         public override string Author => "art0007i"; // with massive help from https://github.com/EIA485
         public override string Version => "2.0.2";
-        public override string Link => "https://github.com/art0007i/MyInspectors/";
+        public override string Link => "https://github.com/lill-la/MyInspectors";
 
         [AutoRegisterConfigKey]
         public static ModConfigurationKey<bool> KEY_ENABLE = new("enable", "Untick to disable the mod.", ()=>true);
 
         public override void OnEngineInit()
         {
-            Harmony harmony = new Harmony("me.art0007i.MyInspectors");
+            Harmony harmony = new Harmony("la.lill.MyInspectors");
 
             var config = GetConfiguration();
             if(config.GetValue(KEY_ENABLE))
